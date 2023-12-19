@@ -1,3 +1,3 @@
-function Home() {}
+function Index() {}
 
-export default Home
+export default Index
