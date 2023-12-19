@@ -56,6 +56,16 @@ body {
     align-items: center;
 }
 
+.header-and-main-container {
+    flex: 4;
+    height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    height: calc(100vh - 110px);
+}
+
 .flex {
     display: flex;
 }

@@ -8,12 +8,14 @@ function Layout() {
     return (
         <>
             <Index />
-            <Header />
-            <main>
-                <Suspense>
-                    <Outlet />
-                </Suspense>
-            </main>
+            <div className="header-and-main-container flex">
+                <Header />
+                <main>
+                    <Suspense>
+                        <Outlet />
+                    </Suspense>
+                </main>
+            </div>
         </>
     )
 }
