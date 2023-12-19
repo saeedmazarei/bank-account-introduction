@@ -1,4 +1,56 @@
 .header-container {
     flex: 4;
     height: 110px;
+    font-size: 16px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+.time-and-date-container {
+    margin-right: 5%;
+    gap: 30px;
+}
+
+.image-icons-filters-container {
+    justify-content: flex-end;
+    margin-left: 5%;
+    gap: 20px;
+}
+
+.filters-container {
+    gap: 15px;
+    border-radius: var(--Radius-md-1, 8px);
+    background: var(--Color-Grey-50, #f9fafb);
+    height: 50px;
+    padding: 8px;
+}
+
+.header-icons-container {
+    width: 64px;
+    height: 24px;
+}
+
+.icon-container {
+    width: 24px;
+    height: 24px;
+}
+
+.profile-picture-container {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid var(--Color-Grey-200, #eaecf0);
+    img {
+        width: 43px;
+        height: 43px;
+        border-radius: 50%;
+    }
+}
+
+.profile-picture-container.active {
+    border-color: #0fb86a;
 }

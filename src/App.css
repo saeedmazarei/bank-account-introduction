@@ -1,9 +1,46 @@
 body {
-  margin: 0;
+    margin: 0;
+    direction: rtl;
 }
 
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.hor-center {
+    justify-content: center;
+}
+
+.ver-center {
+    align-items: center;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.text-primary {
+    color: #0f1828;
+}
+
+.text-secondary {
+    color: #334054;
+}
+
+.text-disable {
+    color: #d0d5dd;
+}
+
+.icon-color {
+    color: #667085;
 }

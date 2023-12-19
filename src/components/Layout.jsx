@@ -7,8 +7,8 @@ import Index from './navBar/Index'
 function Layout() {
     return (
         <>
-            <Header />
             <Index />
+            <Header />
             <main>
                 <Suspense>
                     <Outlet />
