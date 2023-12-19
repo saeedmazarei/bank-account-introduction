@@ -1,5 +1,7 @@
+import styles from './Index.module.scss'
+
 function Index() {
-    return <nav></nav>
+    return <nav className={styles['navigation-bar']}></nav>
 }
 
 export default Index
