@@ -52,7 +52,7 @@ function DataTable() {
     const columns = [
         {
             title: t('createAccount.accountTitle'),
-            width: 150,
+            width: 170,
             dataIndex: 'title',
             fixed: 'left',
             render: (text) => (text.length > 20 ? `${text.substring(0, 20)}...` : text),
@@ -61,7 +61,6 @@ function DataTable() {
             title: t('createAccount.accountCode'),
             dataIndex: 'accountCode',
             width: 90,
-            sorter: true,
         },
         {
             title: t('createAccount.accountNumber'),
@@ -89,7 +88,7 @@ function DataTable() {
             width: 120,
         },
         {
-            title: 'Action',
+            title: '',
             fixed: 'right',
             width: 120,
             render: (record) => <ActionBox id={record.id} />,
