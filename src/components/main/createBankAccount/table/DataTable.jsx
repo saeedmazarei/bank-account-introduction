@@ -6,7 +6,7 @@ import ActionBox from './ActionBox'
 
 const data = [
     {
-        key: '1',
+        id: 1,
         title: 'بانک ملی شعبه مرکزی شهر تهران به آدرس جردن خیابان گاندی',
         accountCode: '۲۲۲۲',
         accountNumber: '۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲',
@@ -16,7 +16,7 @@ const data = [
         cardReaderStatus: 'غیر متصل',
     },
     {
-        key: '2',
+        id: 2,
         title: 'بانک ملی شعبه مرکزی شهر تهران به آدرس جردن خیابان گاندی',
         accountCode: '۲۲۲۲',
         accountNumber: '۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲',
@@ -26,7 +26,7 @@ const data = [
         cardReaderStatus: 'غیر متصل',
     },
     {
-        key: '3',
+        id: 3,
         title: 'بانک ملی شعبه مرکزی شهر تهران به آدرس جردن خیابان گاندی',
         accountCode: '۲۲۲۲',
         accountNumber: '۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲',
@@ -42,9 +42,9 @@ function DataTable() {
     const { t } = useTranslation()
 
     const onSelectChange = (newSelectedRowKeys) => {
-        console.log('selectedRowKeys changed: ', newSelectedRowKeys)
         setSelectedRowKeys(newSelectedRowKeys)
     }
+
     const rowSelection = {
         selectedRowKeys,
         onChange: onSelectChange,
@@ -132,7 +132,7 @@ function DataTable() {
         <Table
             columns={columns}
             dataSource={data}
-            rowKey="key"
+            rowKey="id"
             rowSelection={rowSelection}
             scroll={{ x: 1180 }}
             style={{ width: '1100px', marginTop: '2%' }}
