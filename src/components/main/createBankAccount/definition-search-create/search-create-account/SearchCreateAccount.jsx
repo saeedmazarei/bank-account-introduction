@@ -8,6 +8,9 @@ import styles from './SearchCreateAccount.module.scss'
 
 function SearchCreateAccount() {
     const { t } = useTranslation()
+
+    function deleteRowTableHandler() {}
+
     return (
         <div className={styles['search-and-create-container']}>
             <div className={styles['search-filters-container']}>
@@ -17,7 +20,7 @@ function SearchCreateAccount() {
             <div className={styles['create-delete-account-container']}>
             <IconInBox icon={'printer'} />
             <IconInBox icon={'exel'} />
-            <IconInBox icon={'Delete'} />
+            <IconInBox icon={'Delete'} onClick={deleteRowTableHandler} />
             <Button>
                 <IconText icon="plus.svg" text={t('createAccount.newAccount')} />
             </Button>
