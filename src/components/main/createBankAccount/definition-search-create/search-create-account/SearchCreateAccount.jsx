@@ -1,6 +1,7 @@
 import { Popconfirm } from 'antd'
 import { useTranslation } from 'react-i18next'
 
+import { useAccountsData, useSelectedRow } from '../../../../../store'
 import IconInBox from '../../../../shared/icon-in-box/IconInBox'
 import IconText from '../../../../header/icon-text/IconText'
 import SearchBar from '../../../../shared/searchBar/SearchBar'
@@ -9,8 +10,14 @@ import styles from './SearchCreateAccount.module.scss'
 
 function SearchCreateAccount() {
     const { t } = useTranslation()
+    const { allAccountsData, setAllAccountsData } = useAccountsData()
+    const { selectedRow } = useSelectedRow()
 
-    const deleteRowTableHandler = () => console.log('delete')
+    const deleteRowTableHandler = () => {
+        let newData = [...allAccountsData]
+        newData = newData.filter((item) => !selectedRow.includes(item.id))
+        setAllAccountsData(newData)
+    }
 
     return (
         <div className={styles['search-and-create-container']}>

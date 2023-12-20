@@ -1,52 +1,19 @@
-import { useState } from 'react'
-
 import { Table } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ActionBox from './ActionBox'
-
-const data = [
-    {
-        id: 1,
-        title: 'بانک ملی شعبه مرکزی شهر تهران به آدرس جردن خیابان گاندی',
-        accountCode: '۲۲۲۲',
-        accountNumber: '۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲',
-        shebaNumber: 'IR-۹۸-۰۱۷-۰۰۰۰-۰۰۰۱-۲۳۲۳',
-        cardNumber: '۶۰۳۷-۹۹۸۷-۵۵۴۴-۳۳۶۶',
-        gateStatus: 'متصل',
-        cardReaderStatus: 'غیر متصل',
-    },
-    {
-        id: 2,
-        title: 'بانک ملی شعبه مرکزی شهر تهران به آدرس جردن خیابان گاندی',
-        accountCode: '۲۲۲۲',
-        accountNumber: '۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲',
-        shebaNumber: 'IR-۹۸-۰۱۷-۰۰۰۰-۰۰۰۱-۲۳۴۸۵',
-        cardNumber: '۶۰۳۷-۹۹۸۷-۵۵۴۴-۳۳۶۶',
-        gateStatus: 'متصل',
-        cardReaderStatus: 'غیر متصل',
-    },
-    {
-        id: 3,
-        title: 'بانک ملی شعبه مرکزی شهر تهران به آدرس جردن خیابان گاندی',
-        accountCode: '۲۲۲۲',
-        accountNumber: '۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲',
-        shebaNumber: 'IR-۹۸-۰۱۷-۰۰۰۰-۰۰۰۱-۲۳۳۴',
-        cardNumber: '۶۰۳۷-۹۹۸۷-۵۵۴۴-۳۳۶۶',
-        gateStatus: 'متصل',
-        cardReaderStatus: 'غیر متصل',
-    },
-]
+import { useAccountsData, useSelectedRow } from '../../../../store'
 
 function DataTable() {
-    const [selectedRowKeys, setSelectedRowKeys] = useState([])
+    const { allAccountsData } = useAccountsData()
+    const { selectedRow, setSelectedRow } = useSelectedRow()
     const { t } = useTranslation()
-
+console.log(allAccountsData)
     const onSelectChange = (newSelectedRowKeys) => {
-        setSelectedRowKeys(newSelectedRowKeys)
+        setSelectedRow(newSelectedRowKeys)
     }
 
     const rowSelection = {
-        selectedRowKeys,
+        selectedRow,
         onChange: onSelectChange,
         selections: [
             Table.SELECTION_ALL,
@@ -63,7 +30,7 @@ function DataTable() {
                         }
                         return true
                     })
-                    setSelectedRowKeys(newSelectedRowKeys)
+                    selectedRow(newSelectedRowKeys)
                 },
             },
             {
@@ -77,7 +44,7 @@ function DataTable() {
                         }
                         return false
                     })
-                    setSelectedRowKeys(newSelectedRowKeys)
+                    selectedRow(newSelectedRowKeys)
                 },
             },
         ],
@@ -131,7 +98,7 @@ function DataTable() {
     return (
         <Table
             columns={columns}
-            dataSource={data}
+            dataSource={allAccountsData}
             rowKey="id"
             rowSelection={rowSelection}
             scroll={{ x: 1180 }}
