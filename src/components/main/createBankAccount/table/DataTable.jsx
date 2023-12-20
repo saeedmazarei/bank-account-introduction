@@ -7,7 +7,7 @@ function DataTable() {
     const { allAccountsData } = useAccountsData()
     const { selectedRow, setSelectedRow } = useSelectedRow()
     const { t } = useTranslation()
-console.log(allAccountsData)
+
     const onSelectChange = (newSelectedRowKeys) => {
         setSelectedRow(newSelectedRowKeys)
     }
@@ -92,7 +92,7 @@ console.log(allAccountsData)
             title: 'Action',
             fixed: 'right',
             width: 120,
-            render: () => <ActionBox />,
+            render: (record) => <ActionBox id={record.id} />,
         },
     ]
     return (
