@@ -135,7 +135,7 @@ function DataTable() {
             rowKey="key"
             rowSelection={rowSelection}
             scroll={{ x: 1180 }}
-            style={{ width: '1100px' }}
+            style={{ width: '1100px', marginTop: '5%' }}
         />
     )
 }
