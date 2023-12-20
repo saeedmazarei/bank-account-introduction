@@ -35,7 +35,10 @@ function SearchCreateAccount() {
                     okText={t('base.yes')}
                     cancelText={t('base.no')}
                 >
-                    <IconInBox icon={'Delete'} />
+                    <IconInBox
+                        icon={'Delete'}
+                        style={{ backgroundColor: selectedRow.length > 0 && 'red' }}
+                    />
                 </Popconfirm>
                 <Button>
                     <IconText icon="plus.svg" text={t('createAccount.newAccount')} />
