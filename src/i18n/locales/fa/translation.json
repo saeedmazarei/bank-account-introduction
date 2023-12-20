@@ -1,5 +1,11 @@
 {
     "home": {},
+    "base": {
+        "deleteAccounts": "حذف حساب ها",
+        "areYouSureForDelete": "آیا از حذف این حساب ها مطمین هستید؟",
+        "yes": "بله",
+        "no": "خیر"
+    },
     "createAccount": {
         "samina": "ثمینا",
         "dashboard": "داشبورد",

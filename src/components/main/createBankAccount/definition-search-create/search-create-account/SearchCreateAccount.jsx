@@ -1,3 +1,4 @@
+import { Popconfirm } from 'antd'
 import { useTranslation } from 'react-i18next'
 
 import IconInBox from '../../../../shared/icon-in-box/IconInBox'
@@ -9,7 +10,7 @@ import styles from './SearchCreateAccount.module.scss'
 function SearchCreateAccount() {
     const { t } = useTranslation()
 
-    function deleteRowTableHandler() {}
+    const deleteRowTableHandler = () => console.log('delete')
 
     return (
         <div className={styles['search-and-create-container']}>
@@ -18,12 +19,20 @@ function SearchCreateAccount() {
                 <IconInBox icon={'Filter'} />
             </div>
             <div className={styles['create-delete-account-container']}>
-            <IconInBox icon={'printer'} />
-            <IconInBox icon={'exel'} />
-            <IconInBox icon={'Delete'} onClick={deleteRowTableHandler} />
-            <Button>
-                <IconText icon="plus.svg" text={t('createAccount.newAccount')} />
-            </Button>
+                <IconInBox icon={'printer'} />
+                <IconInBox icon={'exel'} />
+                <Popconfirm
+                    title={t('base.deleteAccounts')}
+                    description={t('base.areYouSureForDelete')}
+                    onConfirm={deleteRowTableHandler}
+                    okText={t('base.yes')}
+                    cancelText={t('base.no')}
+                >
+                    <IconInBox icon={'Delete'} />
+                </Popconfirm>
+                <Button>
+                    <IconText icon="plus.svg" text={t('createAccount.newAccount')} />
+                </Button>
             </div>
         </div>
     )
