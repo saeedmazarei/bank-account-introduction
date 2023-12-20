@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { Table } from 'antd'
 import { useTranslation } from 'react-i18next'
+import ActionBox from './ActionBox'
 
 const data = [
     {
@@ -124,7 +125,7 @@ function DataTable() {
             title: 'Action',
             fixed: 'right',
             width: 120,
-            render: () => <a>action</a>,
+            render: () => <ActionBox />,
         },
     ]
     return (
