@@ -1,0 +1,25 @@
+.definition-and-video-tutorial {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.definition-container {
+    height: 100%;
+    h3 {
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+    }
+    span {
+        color: #485367;
+    }
+}
+
+.video-tutorial-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
