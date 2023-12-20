@@ -31,6 +31,16 @@ const data = [
         gateStatus: 'متصل',
         cardReaderStatus: 'غیر متصل',
     },
+    {
+        id: 4,
+        title: 'بانک مسکن شعبه مرکزی شهر تهران به آدرس جردن خیابان گاندی',
+        accountCode: '۲۲۲۲',
+        accountNumber: '۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲۲',
+        shebaNumber: 'IR-۹۸-۰۱۷-۰۰۰۰-۰۰۰۱-۲۳۳۴',
+        cardNumber: '۶۰۳۷-۹۹۸۷-۵۵۴۴-۳۱۲۴',
+        gateStatus: 'متصل',
+        cardReaderStatus: 'غیر متصل',
+    },
 ]
 
 export const useAccountsData = create((set) => ({
