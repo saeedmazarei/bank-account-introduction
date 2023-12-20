@@ -52,7 +52,7 @@ function DataTable() {
     const columns = [
         {
             title: t('createAccount.accountTitle'),
-            width: 130,
+            width: 150,
             dataIndex: 'title',
             fixed: 'left',
             render: (text) => (text.length > 20 ? `${text.substring(0, 20)}...` : text),
@@ -101,7 +101,7 @@ function DataTable() {
             dataSource={allAccountsData}
             rowKey="id"
             rowSelection={rowSelection}
-            scroll={{ x: 1180 }}
+            scroll={{ x: 1380 }}
             style={{ width: '1100px', marginTop: '2%' }}
         />
     )
