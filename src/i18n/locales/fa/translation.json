@@ -1,4 +1,15 @@
 {
     "home": {},
-    "createAccount": {}
+    "createAccount": {
+        "samina": "ثمینا",
+        "dashboard": "داشبورد",
+        "accountParty": "طرف حساب",
+        "goodsAndServices":" کالا و خدمات",
+        "inventory": "انبارداری",
+        "sale": "فروش",
+        "treasury": "خزانه داری",
+        "bankAccountDefinition": "تعریف حساب بانکی",
+        "accounting": "حسابداری",
+        "setting": "تنظیمات"
+    }
 }
