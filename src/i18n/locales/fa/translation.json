@@ -17,6 +17,7 @@
         "shebaNumber": "شماره شبا",
         "cardNumber": "شماره کارت",
         "gateStatus": "وضعیت درگاه",
-        "cardReaderStatus": "وضعیت کارتخوان"
+        "cardReaderStatus": "وضعیت کارتخوان",
+        "newAccount": "حساب جدید"
     }
 }

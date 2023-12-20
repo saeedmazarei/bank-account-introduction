@@ -1,0 +1,19 @@
+.card {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #e8edf6;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    input {
+        border: none;
+        outline: none;
+        width: 80%;
+    }
+}
+
+.card:focus-within {
+    border-color: #485367;
+}

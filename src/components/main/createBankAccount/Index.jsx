@@ -1,3 +1,13 @@
-function Index() {}
+import DefinitionSearchBox from './definition-search-create/DefinitionSearchBox'
+import DataTable from './table/DataTable'
 
-export default Index
+function DefinitionAccount() {
+    return (
+        <>
+            <DefinitionSearchBox />
+            <DataTable />
+        </>
+    )
+}
+
+export default DefinitionAccount

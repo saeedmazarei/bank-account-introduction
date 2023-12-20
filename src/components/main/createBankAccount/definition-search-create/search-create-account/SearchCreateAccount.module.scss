@@ -1,0 +1,19 @@
+.search-and-create-container {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.search-filters-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.create-delete-account-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
