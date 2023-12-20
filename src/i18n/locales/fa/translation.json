@@ -10,6 +10,13 @@
         "treasury": "خزانه داری",
         "bankAccountDefinition": "تعریف حساب بانکی",
         "accounting": "حسابداری",
-        "setting": "تنظیمات"
+        "setting": "تنظیمات",
+        "accountTitle": "عنوان حساب",
+        "accountCode": "کد حساب",
+        "accountNumber": "شماره حساب",
+        "shebaNumber": "شماره شبا",
+        "cardNumber": "شماره کارت",
+        "gateStatus": "وضعیت درگاه",
+        "cardReaderStatus": "وضعیت کارتخوان"
     }
 }
