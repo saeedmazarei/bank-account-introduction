@@ -5,8 +5,8 @@ import styles from './IconInBox.module.scss'
 
 function IconInBox({ icon, onClick }) {
     return (
-        <Card className={styles['icon-container']}>
-            <img src={`/assets/images/${icon}.svg`} onClick={onClick} />
+        <Card className={styles['icon-container']} onClick={onClick}>
+            <img src={`/assets/images/${icon}.svg`} />
         </Card>
     )
 }
