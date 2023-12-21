@@ -1,21 +1,46 @@
+import { useState } from 'react'
+
+import PropTypes from 'prop-types'
 import { Form, Select, Button } from 'antd'
 import { useTranslation } from 'react-i18next'
 
+import { useAccountsData } from '../../../../../../store'
 import styles from './FiltersModal.module.scss'
 
-function FiltersModal() {
+function FiltersModal({ setIsModalOpen }) {
+    const [accountsHistory] = useState([])
+    const { allAccountsData, setAllAccountsData } = useAccountsData()
     const { t } = useTranslation()
-    function filterHandler(value) {
-        console.log(value)
+
+    accountsHistory.push(allAccountsData)
+
+    const cancelHandler = () => setIsModalOpen(false)
+
+    function deleteFilterHandler() {
+        setAllAccountsData(accountsHistory[0])
+        setIsModalOpen(false)
     }
+
+    function filterHandler(value) {
+        setAllAccountsData(
+            allAccountsData.filter((item) => {
+                return (
+                    item.gateStatus === value.gateStatus &&
+                    item.cardReaderStatus === value.cardReaderStatus
+                )
+            }),
+        )
+        setIsModalOpen(false)
+    }
+
     return (
         <div className={styles['modal-container']}>
             <Form
                 layout="vertical"
                 onFinish={filterHandler}
                 initialValues={{
-                    cardReaderStatus: 'فعال',
-                    gateStatus: 'فعال',
+                    cardReaderStatus: 'متصل',
+                    gateStatus: 'متصل',
                 }}
             >
                 <div className={styles['filters-container']}>
@@ -27,12 +52,12 @@ function FiltersModal() {
                         <Select
                             options={[
                                 {
-                                    value: 'فعال',
-                                    label: 'فعال',
+                                    value: 'متصل',
+                                    label: 'متصل',
                                 },
                                 {
-                                    value: 'غیرفعال',
-                                    label: 'غیرفعال',
+                                    value: 'غیر متصل',
+                                    label: 'غیر متصل',
                                 },
                             ]}
                             style={{ fontFamily: 'IRANYekan' }}
@@ -46,18 +71,18 @@ function FiltersModal() {
                         <Select
                             options={[
                                 {
-                                    value: 'فعال',
-                                    label: 'فعال',
+                                    value: 'متصل',
+                                    label: 'متصل',
                                 },
                                 {
-                                    value: 'غیرفعال',
-                                    label: 'غیرفعال',
+                                    value: 'غیر متصل',
+                                    label: 'غیر متصل',
                                 },
                             ]}
                             style={{ fontFamily: 'IRANYekan' }}
                         />
                     </Form.Item>
-                    <span className={styles.span}>{t('createAccount.deleteAllFilters')}</span>
+                    <span onClick={deleteFilterHandler} className={styles.span}>{t('createAccount.deleteAllFilters')}</span>
                 </div>
                 <div className={styles['button-container']}>
                     <Form.Item>
@@ -70,7 +95,7 @@ function FiltersModal() {
                         </Button>
                     </Form.Item>
                     <Form.Item>
-                        <Button style={{ width: '154px', fontFamily: 'IRANYekan' }}>
+                        <Button style={{ width: '154px', fontFamily: 'IRANYekan' }} onClick={cancelHandler}>
                             {t('base.cancel')}
                         </Button>
                     </Form.Item>
@@ -78,6 +103,10 @@ function FiltersModal() {
             </Form>
         </div>
     )
+}
+
+FiltersModal.propTypes = {
+    setIsModalOpen: PropTypes.bool,
 }
 
 export default FiltersModal
