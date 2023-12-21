@@ -106,7 +106,7 @@ function FiltersModal({ setIsModalOpen }) {
 }
 
 FiltersModal.propTypes = {
-    setIsModalOpen: PropTypes.bool,
+    setIsModalOpen: PropTypes.func,
 }
 
 export default FiltersModal

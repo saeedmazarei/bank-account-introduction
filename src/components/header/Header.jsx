@@ -1,11 +1,11 @@
-import Card from '../shared/card/Card'
+import CostumCard from '../shared/card/CostumCard'
 import styles from './Header.module.scss'
 import IconText from './icon-text/IconText'
 
 function Header() {
     return (
         <header className={styles['header-container']}>
-            <Card className={`${styles.card} flex space-between ver-center`}>
+            <CostumCard className={`${styles.card} flex space-between ver-center`}>
                 <div className={`${styles['time-and-date-container']} flex space-between`}>
                     <IconText icon="Time-Circle.svg" text="ساعت ۱۳:۳۱" />
                     <IconText
@@ -41,7 +41,7 @@ function Header() {
                         <img src="/assets/images/profile.jpeg" />
                     </div>
                 </div>
-            </Card>
+            </CostumCard>
         </header>
     )
 }

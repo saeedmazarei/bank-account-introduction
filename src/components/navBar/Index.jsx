@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next'
 
-import Card from '../shared/card/Card'
 import styles from './Index.module.scss'
 import NavigationItem from './NavigationItem'
+import CostumCard from '../shared/card/CostumCard'
 
 function Index() {
     const { t } = useTranslation()
     return (
         <nav className={styles['navigation-bar']}>
-            <Card className={`${styles.card} flex space-between`}>
+            <CostumCard className={`${styles.card} flex space-between`}>
                 <div className={`${styles['logo-and-nav-bar-container']}`}>
                     <div className="logo-website-name-container">
                         <div className='flex ver-center'>
@@ -37,7 +37,7 @@ function Index() {
                     <NavigationItem icon="Setting.svg" text={t('createAccount.setting')} />
                 </div>
                 <div className={`${styles['help-and-support-container']}`}></div>
-            </Card>
+            </CostumCard>
         </nav>
     )
 }

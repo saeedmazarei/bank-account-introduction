@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useAccountsData } from '../../../store'
-import Card from '../card/Card'
 import styles from './SearchBar.module.scss'
+import CostumCard from '../card/CostumCard'
 
 function SearchBar() {
     const [accountsHistory] = useState([])
@@ -24,10 +24,10 @@ function SearchBar() {
         )
     }
     return (
-        <Card className={styles.card}>
+        <CostumCard className={styles.card}>
             <img src="/assets/images/Search.svg" />
             <input type="text" onChange={searchHandler} />
-        </Card>
+        </CostumCard>
     )
 }
 
