@@ -1,21 +1,21 @@
 import { useState } from 'react'
-import { useAccountsData } from '../../../store'
+import { useDisplayedData } from '../../../store'
 import styles from './SearchBar.module.scss'
 import CostumCard from '../card/CostumCard'
 
 function SearchBar() {
     const [accountsHistory] = useState([])
-    const { allAccountsData, setAllAccountsData } = useAccountsData()
+    const { displayedData, setDisplayedData } = useDisplayedData()
 
-    accountsHistory.push(allAccountsData)
+    accountsHistory.push(displayedData)
 
     function searchHandler(searchInput) {
         if(searchInput.target.value === '') {
-            setAllAccountsData(accountsHistory[0])
+            setDisplayedData(accountsHistory[0])
             return
         }
-        setAllAccountsData(
-            allAccountsData.filter((item) =>
+        setDisplayedData(
+            displayedData.filter((item) =>
                 Object.values(item).some(
                     (value) =>
                         typeof value === 'string' && value.includes(searchInput.target.value),

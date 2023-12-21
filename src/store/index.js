@@ -213,3 +213,8 @@ export const useSelectedRow = create((set) => ({
     selectedRow: [],
     setSelectedRow: (numArray) => set({ selectedRow: numArray }),
 }))
+
+export const useDisplayedData = create((set) => ({
+    displayedData: data.slice(0, 10),
+    setDisplayedData: (newArray) => set({ displayedData: newArray }),
+}))

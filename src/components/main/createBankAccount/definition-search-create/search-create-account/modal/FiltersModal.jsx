@@ -4,26 +4,26 @@ import PropTypes from 'prop-types'
 import { Form, Select, Button } from 'antd'
 import { useTranslation } from 'react-i18next'
 
-import { useAccountsData } from '../../../../../../store'
+import { useDisplayedData } from '../../../../../../store'
 import styles from './FiltersModal.module.scss'
 
 function FiltersModal({ setIsModalOpen }) {
     const [accountsHistory] = useState([])
-    const { allAccountsData, setAllAccountsData } = useAccountsData()
+    const { displayedData, setDisplayedData } = useDisplayedData()
     const { t } = useTranslation()
 
-    accountsHistory.push(allAccountsData)
+    accountsHistory.push(displayedData)
 
     const cancelHandler = () => setIsModalOpen(false)
 
     function deleteFilterHandler() {
-        setAllAccountsData(accountsHistory[0])
+        setDisplayedData(accountsHistory[0])
         setIsModalOpen(false)
     }
 
     function filterHandler(value) {
-        setAllAccountsData(
-            allAccountsData.filter((item) => {
+        setDisplayedData(
+            displayedData.filter((item) => {
                 return (
                     item.gateStatus === value.gateStatus &&
                     item.cardReaderStatus === value.cardReaderStatus

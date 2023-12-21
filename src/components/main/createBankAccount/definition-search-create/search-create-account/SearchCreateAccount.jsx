@@ -1,7 +1,7 @@
 import { Popconfirm, Modal } from 'antd'
 import { useTranslation } from 'react-i18next'
 
-import { useAccountsData, useSelectedRow } from '../../../../../store'
+import { useDisplayedData, useSelectedRow } from '../../../../../store'
 import IconInBox from '../../../../shared/icon-in-box/IconInBox'
 import IconText from '../../../../header/icon-text/IconText'
 import SearchBar from '../../../../shared/searchBar/SearchBar'
@@ -12,14 +12,14 @@ import FiltersModal from './modal/FiltersModal'
 
 function SearchCreateAccount() {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const { allAccountsData, setAllAccountsData } = useAccountsData()
+    const { displayedData, setDisplayedData } = useDisplayedData()
     const { selectedRow } = useSelectedRow()
     const { t } = useTranslation()
 
     const deleteRowTableHandler = () => {
-        let newData = [...allAccountsData]
+        let newData = [...displayedData]
         newData = newData.filter((item) => !selectedRow.includes(item.id))
-        setAllAccountsData(newData)
+        setDisplayedData(newData)
     }
 
     const modalHandler = () => setIsModalOpen(true)

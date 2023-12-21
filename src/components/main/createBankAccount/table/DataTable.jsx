@@ -3,13 +3,13 @@ import { useState } from 'react'
 import { Table } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ActionBox from './ActionBox'
-import { useAccountsData, useSelectedRow } from '../../../../store'
+import { useAccountsData, useDisplayedData, useSelectedRow } from '../../../../store'
 import IconText from '../../../header/icon-text/IconText'
 
 function DataTable() {
     const { allAccountsData } = useAccountsData()
     const { selectedRow, setSelectedRow } = useSelectedRow()
-    const [displayedData, setDisplayedData] = useState(allAccountsData.slice(0, 10))
+    const { displayedData, setDisplayedData } = useDisplayedData()
     const [limit, setLimit] = useState(10)
     const { t } = useTranslation()
 
@@ -104,6 +104,7 @@ function DataTable() {
             render: (record) => <ActionBox id={record.id} />,
         },
     ]
+
     return (
         <div style={{marginBottom: '50px'}}>
             <Table

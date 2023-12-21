@@ -2,16 +2,16 @@ import PropTypes from 'prop-types'
 import { Popconfirm } from 'antd'
 import { useTranslation } from 'react-i18next'
 
-import { useAccountsData } from '../../../../store'
+import { useDisplayedData } from '../../../../store'
 
 function ActionBox({ id }) {
-    const { allAccountsData, setAllAccountsData } = useAccountsData()
+    const { displayedData, setDisplayedData } = useDisplayedData()
     const { t } = useTranslation()
 
     const deleteRowHandler = () => {
-        let newData = [...allAccountsData]
+        let newData = [...displayedData]
         newData = newData.filter((item) => item.id !== id)
-        setAllAccountsData(newData)
+        setDisplayedData(newData)
     }
 
     return (
