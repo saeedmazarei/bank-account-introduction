@@ -4,7 +4,9 @@
         "deleteAccounts": "حذف حساب ها",
         "areYouSureForDelete": "آیا از حذف این حساب ها مطمین هستید؟",
         "yes": "بله",
-        "no": "خیر"
+        "no": "خیر",
+        "confirm": "تایید",
+        "cancel": "انصراف"
     },
     "createAccount": {
         "samina": "ثمینا",
@@ -26,6 +28,8 @@
         "cardReaderStatus": "وضعیت کارتخوان",
         "newAccount": "حساب جدید",
         "testText": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است",
-        "videoTutorial": "آموزش ویدیویی"
+        "videoTutorial": "آموزش ویدیویی",
+        "filters": "فیلترها",
+        "deleteAllFilters": "حذف همه فیلترها"
     }
 }
