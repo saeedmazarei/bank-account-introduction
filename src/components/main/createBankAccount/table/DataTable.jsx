@@ -1,12 +1,22 @@
+import { useState } from 'react'
+
 import { Table } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ActionBox from './ActionBox'
 import { useAccountsData, useSelectedRow } from '../../../../store'
+import IconText from '../../../header/icon-text/IconText'
 
 function DataTable() {
     const { allAccountsData } = useAccountsData()
     const { selectedRow, setSelectedRow } = useSelectedRow()
+    const [displayedData, setDisplayedData] = useState(allAccountsData.slice(0, 10))
+    const [limit, setLimit] = useState(10)
     const { t } = useTranslation()
+
+    const loadMoreData = () => {
+        setLimit((prevLimit) => prevLimit + 10)
+        setDisplayedData(allAccountsData.slice(0, limit))
+    }
 
     const onSelectChange = (newSelectedRowKeys) => {
         setSelectedRow(newSelectedRowKeys)
@@ -95,14 +105,18 @@ function DataTable() {
         },
     ]
     return (
-        <Table
-            columns={columns}
-            dataSource={allAccountsData}
-            rowKey="id"
-            rowSelection={rowSelection}
-            scroll={{ x: 1380 }}
-            style={{ width: '1100px', margin: '2% auto' }}
-        />
+        <div style={{marginBottom: '50px'}}>
+            <Table
+                columns={columns}
+                dataSource={displayedData}
+                rowKey="id"
+                rowSelection={rowSelection}
+                scroll={{ x: 1380 }}
+                style={{ width: '1100px', margin: '2% auto' }}
+                pagination={false}
+            />
+            <IconText icon='load-more.svg' text={t('createAccount.loadMore')} onClick={loadMoreData} />
+        </div>
     )
 }
 
