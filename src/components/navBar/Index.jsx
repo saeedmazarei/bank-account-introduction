@@ -37,7 +37,11 @@ function Index() {
                     <NavigationItem icon="Home.svg" text={t('createAccount.inventory')} />
                     <NavigationItem icon="Buy.svg" text={t('createAccount.sale')} />
                     <NavigationItem icon="Coins.svg" text={t('createAccount.treasury')} />
-                    {/* <NavigationItem  icon="Calculate.svg" text={t('createAccount.bankAccountDefinition')} /> */}
+                    <div className={styles["sub-menu-container"]}>
+                        <span className={styles.first}>{t('createAccount.bankAccountDefinition')}</span>
+                        <span>{t('createAccount.optionTwo')}</span>
+                        <span>{t('createAccount.optionThree')}</span>
+                    </div>
                     <NavigationItem icon="Calculate.svg" text={t('createAccount.accounting')} />
                     <NavigationItem icon="Setting.svg" text={t('createAccount.setting')} />
                 </div>
