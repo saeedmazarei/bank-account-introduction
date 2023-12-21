@@ -35,10 +35,27 @@
     height: 56px;
     justify-content: space-around;
     align-items: center;
-    background-color: #F9FAFB;
+    background-color: #f9fafb;
 }
 
 .help-and-support-container {
     flex: 1;
-    background-color: aqua;
+    border-top: 1px solid #eaecf0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    gap: 8px;
+}
+
+.support-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.version {
+    font-size: 12px;
+    font-weight: 200;
 }

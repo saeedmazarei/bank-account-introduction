@@ -1,5 +1,9 @@
 {
-    "home": {},
+    "home": {
+        "help": "راهنما",
+        "suppourt": "پشتیبانی",
+        "version": "ورژن ۱.۰.۴"
+    },
     "base": {
         "deleteAccounts": "حذف حساب ها",
         "areYouSureForDelete": "آیا از حذف این حساب ها مطمین هستید؟",
